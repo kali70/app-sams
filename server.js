@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const boolParser = require('express-query-boolean');
+
 const http = require('http');
 const routes = require('./routes');
 
