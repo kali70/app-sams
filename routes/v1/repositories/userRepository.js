@@ -16,6 +16,7 @@ module.exports = class UserRepository {
   static async createUser(user) {
     try {
         const type_id = await Type.query().where('type', 'administrator');
+        console.log("type_id")
         return await User.query().insert({email: user.email, type: type_id[0].id})
     } catch (err) {
         console.log(err);
