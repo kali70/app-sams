@@ -13,6 +13,16 @@ module.exports = async (router) => {
       throw err;
     }
   });
+  router.get('/types_users', async (req, res, next) => {
+    console.log("I am type");
+    try {
+      const result = await TypeController.getTypesAndUsers();
+      res.status(200).json(result);
+    } catch (err) {
+      throw err;
+    }
+  });
+
   router.post('/', async (req, res, next) => {
     console.log("I am type");
     try {

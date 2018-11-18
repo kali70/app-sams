@@ -10,6 +10,11 @@ const typesRouter = promiseRouter();
 apiRouter.use('/types', typesRouter);
 registerTypesRouter(typesRouter);
 
+
+// const typeUsersRouter = promiseRouter();
+// apiRouter.use('/types_users', typeUsersRouter);
+// registerTypesRouter(typeUsersRouter);
+
 const usersRouter = promiseRouter();
 apiRouter.use('/users', usersRouter);
 registerAllUsersRouter(usersRouter);

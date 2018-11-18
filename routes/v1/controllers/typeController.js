@@ -7,6 +7,13 @@ module.exports = class typeController {
     //
    return results;
   }
+  static async getTypesAndUsers() {
+    const results =  await Type.getTypesAndUsers()
+    console.log("result", results);
+    //
+   return results;
+
+  }
 
   static async createType(type) {
     console.log("I am in the controller");
