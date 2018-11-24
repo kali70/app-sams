@@ -3,7 +3,7 @@ const promiseRouter = require('express-promise-router');
 const registerTypesRouter = require('./routers/types');
 const registerAllUsersRouter = require('./routers/users');
 const registerSigninRouter = require('./routers/singin');
-
+const registeRegionsListRouter = require('./routers/regions_list');
 
 
 const typesRouter = promiseRouter();
@@ -18,4 +18,7 @@ const signinRouter = promiseRouter();
 apiRouter.use('/login', signinRouter);
 registerSigninRouter(signinRouter);
 
+const regionsListRouter = promiseRouter();
+apiRouter.use('/regions_list', regionsListRouter);
+registeRegionsListRouter(regionsListRouter);
 module.exports = apiRouter;
