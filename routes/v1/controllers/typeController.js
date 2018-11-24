@@ -1,4 +1,6 @@
 const Type = require('../repositories/typeRepository');
+//const createToken = require('../utils/createToken');
+
 module.exports = class typeController {
   static async getTypes() {
     console.log("I am type controller");

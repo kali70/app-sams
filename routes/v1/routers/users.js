@@ -5,7 +5,7 @@ const UserController = require('../controllers/userController');
 
 module.exports = async (router) => {
   router.get('/', async (req, res, next) => {
-    console.log("I am type");
+    console.log("I am type", req);
     try {
       const result = await UserController.getUsers();
       res.status(200).json(result);
@@ -17,18 +17,19 @@ module.exports = async (router) => {
   router.get('/admin', async (req, res, next) => {
     console.log("I am type");
     try {
-      const result = await UserController.getAdminUsers();
+      const result = await UserController.getAdminUser();
       res.status(200).json(result);
     } catch (err) {
       throw err;
     }
+
   });
 
 
-  router.post('/', async (req, res, next) => {
+  router.post('/admin', async (req, res, next) => {
     console.log("I am type");
     try {
-      const result = await UserController.createUser(req.body);
+      const result = await UserController.createAdminUser(req.body);
       res.status(200).json(result);
     } catch (err) {
       throw err;

@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = class Type extends Model {
     static get tableName() {
-        return 'type';
+        return 'authsvc.type';
     }
 
     static get relationMappings() {
@@ -13,8 +13,8 @@ module.exports = class Type extends Model {
           relation: Model.HasManyRelation,
           modelClass: User,
           join: {
-            from: 'type.id',
-            to: 'all_users.type'
+            from: 'authsvc.type.id',
+            to: 'authsvc.all_users.type'
           }
         }
       }

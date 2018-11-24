@@ -1,9 +1,10 @@
 const { Model } = require('objection');
+const Password = require('objection-password')();
 const path = require('path');
 
-module.exports = class Admin extends Model {
+module.exports = class Admin extends Password(Model) {
     static get tableName() {
-        return 'administrator';
+        return 'authsvc.administrator';
     }
 
     static get idColumn() {
@@ -17,8 +18,8 @@ module.exports = class Admin extends Model {
           relation: Model.HasOneRelation,
           modelClass: User,
           join: {
-            from: 'administrator.user_id',
-            to: 'all_users.id'
+            from: 'authsvc.administrator.user_id',
+            to: 'authsvc.all_users.id'
           }
         }
       }

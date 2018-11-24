@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = class User extends Model {
     static get tableName() {
-        return 'all_users';
+        return 'authsvc.all_users';
     }
     static get relationMappings() {
       const Type = require('./type');
@@ -14,16 +14,16 @@ module.exports = class User extends Model {
           relation: Model.BelongsToOneRelation,
           modelClass: Type,
           join: {
-            from: 'all_users.type',
-            to: 'type.id'
+            from: 'authsvc.all_users.type',
+            to: 'authsvc.type.id'
           }
         },
         admin: {
           relation: Model.HasOneRelation,
           modelClass: Admin,
           join: {
-            from: 'all_users.id',
-            to: 'administrator.user_id'
+            from: 'authsvc.all_users.id',
+            to: 'authsvc.administrator.user_id'
           }
         }
       }

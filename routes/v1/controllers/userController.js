@@ -8,18 +8,17 @@ module.exports = class UserController {
    return results;
   }
 
-  static async getAdminUsers() {
+  static async getAdminUser() {
     console.log("I am type controller");
-    const results =  await User.getAdminUsers()
+    const results =  await User.getAdminUser()
     console.log("result", results);
     //
    return results;
   }
 
-
-  static async createUser(user) {
+  static async createAdminUser(user) {
     console.log("I am in the controller");
-    const result = await User.createUser(user);
+    const result = await User.createAdminUser(user);
     return result;
   }
 };
