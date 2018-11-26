@@ -3,18 +3,22 @@ const path = require('path');
 
 module.exports = class Regions extends Model {
     static get tableName() {
-        return 'regionsvc.region_list';
+        return 'regionsvc.regions';
+    }
+
+    static get idColumn() {
+      return 'region_id';
     }
 
     static get relationMappings() {
-      const Region = require('./regions');
+      const Region = require('./region_list');
       return {
         regions: {
           relation: Model.HasOneRelation,
           modelClass:Region,
           join: {
-            from: 'regionsvc.region_list.id',
-            to: 'regionsvc.regions.region_id'
+            from: 'regionsvc.regions.region_id',
+            to: 'regionsvc.region_list.id'
           }
         }
       }

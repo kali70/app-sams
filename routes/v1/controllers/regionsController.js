@@ -1,10 +1,10 @@
-const RegionsList = require('../repositories/regionsListRepository');
+const Regions = require('../repositories/regionsRepository');
 //const createToken = require('../utils/createToken');
 
-module.exports = class regionsListController {
-  static async getRegionsList() {
+module.exports = class regionsController {
+  static async getRegion() {
     console.log("I am RegionsList controller");
-    const results =  await RegionsList.getRegionsList()
+    const results =  await Regions.getRegion()
     console.log("result", results);
     //
    return results;
@@ -12,7 +12,7 @@ module.exports = class regionsListController {
 
   static async createRegion(region) {
     console.log("I am in the controller");
-    const result = await RegionsList.createRegion(region);
+    const result = await Regions.createRegion(region);
     return result;
   }
 
