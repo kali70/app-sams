@@ -21,7 +21,6 @@
     "jsonwebtoken": "^8.4.0",
     "knex": "^0.15.2",
     "lodash": "^4.17.11",
-    "node-express-middleware": "^3.1.0",
     "nodemon": "^1.18.6",
     "objection": "^1.4.0",
     "objection-password": "^2.0.0",
