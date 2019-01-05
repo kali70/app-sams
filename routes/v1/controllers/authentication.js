@@ -5,6 +5,6 @@ module.exports = class AuthController {
     const results =  await Auth.getAdminUser(user);
     const token = createToken(results);
     console.log("token: ", token);
-   return results;
+   return {results, token};
   }
 };

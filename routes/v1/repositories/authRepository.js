@@ -20,7 +20,7 @@ module.exports = class AuthRepository {
           }
         }
       } else {
-        console.lgo("The user does not exist");
+        console.log("The user does not exist");
       }
     }catch (err) {
       console.log("ERR::", err);

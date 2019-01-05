@@ -24,7 +24,7 @@ module.exports = class UserRepository {
 
   static async getAdminUser() {
     try {
-      const user = await User.query().where("email", "marwan_ali@libya.com").first();
+      const user = await User.query().where("email", "khaled_ali70@yahoo.com").first();
       const admin = await user.$relatedQuery('admin');
       return admin;
     }catch (err) {
