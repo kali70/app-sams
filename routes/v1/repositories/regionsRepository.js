@@ -10,6 +10,14 @@ module.exports = class RegionsRepository {
       throw err;
     }
   }
+  static async getRegionByID(id) {
+    try {
+      const results = await Regions.query().where('region_id', id).eager('students');
+      return results;
+    }catch (err) {
+      throw err;
+    }
+  }
 
   static async createRegion(region) {
     try {

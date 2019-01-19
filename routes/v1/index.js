@@ -5,6 +5,7 @@ const registerAllUsersRouter = require('./routers/users');
 const registerSigninRouter = require('./routers/singin');
 const registerRegionsListRouter = require('./routers/regions_list');
 const registerRegionsRouter = require('./routers/regions');
+const registerStudentsRouter = require('./routers/students');
 
 
 const typesRouter = promiseRouter();
@@ -26,5 +27,8 @@ registerRegionsListRouter(regionsListRouter);
 const regionsRouter = promiseRouter();
 apiRouter.use('/regions', regionsRouter);
 registerRegionsRouter(regionsRouter);
+const studentsRouter = promiseRouter();
+apiRouter.use('/students', studentsRouter);
+registerStudentsRouter(studentsRouter);
 
 module.exports = apiRouter;
