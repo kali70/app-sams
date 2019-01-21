@@ -14,6 +14,16 @@ module.exports = async (router) => {
     }
   });
 
+  router.get('/:id', async (req, res, next) => {
+    console.log("I am type: ", req);
+    try {
+      const result = await RegionsController.getRegionByID(req.params.id);
+      res.status(200).json(result);
+    } catch (err) {
+      throw err;
+    }
+  });
+
   router.post('/', async (req, res, next) => {
     console.log("I am type");
     try {

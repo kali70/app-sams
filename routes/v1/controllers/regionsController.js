@@ -1,5 +1,4 @@
 const Regions = require('../repositories/regionsRepository');
-//const createToken = require('../utils/createToken');
 
 module.exports = class regionsController {
   static async getRegion() {
@@ -14,6 +13,11 @@ module.exports = class regionsController {
     console.log("I am in the controller");
     const result = await Regions.createRegion(region);
     return result;
+  }
+
+  static async getRegionByID(id) {
+    const results =  await Regions.getRegionByID(id)
+    return results;
   }
 
 };
